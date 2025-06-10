@@ -7,6 +7,7 @@ interface ProductInfoModalProps {
 }
 
 export default function ProductInfoModal({ product, onClose, onContinuePurchase }: ProductInfoModalProps) {
+
     return (
         <>
             {/* Header */}
@@ -28,7 +29,7 @@ export default function ProductInfoModal({ product, onClose, onContinuePurchase 
                     <img
                         src={product.imageUrl}
                         alt={product.name}
-                        className="w-full max-w-md h-auto object-contain rounded-lg shadow-sm"
+                        className="w-full max-w-md h-auto max-h-96 object-contain rounded-lg shadow-sm"
                         onError={(e) => {
                             const target = e.target as HTMLImageElement;
                             target.src = '/placeholder-product.png';
@@ -72,7 +73,7 @@ export default function ProductInfoModal({ product, onClose, onContinuePurchase 
                         {product.description && (
                             <div className="mt-4">
                                 <h4 className="font-medium mb-2">Description:</h4>
-                                <p className="text-gray-600 leading-relaxed">{product.description}</p>
+                                <p className="text-gray-600 text-sm leading-relaxed">{product.description}</p>
                             </div>
                         )}
                     </div>

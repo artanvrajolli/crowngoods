@@ -8,7 +8,7 @@ type SortKey = 'name' | 'currentPrice' | 'deliveryDays';
 type SortOrder = 'asc' | 'desc';
 type FilterProductType = {
     electronics: boolean;
-    showOutOfStock: boolean;
+    hideOutOfStock: boolean;
     minPrice?: number;
     maxPrice?: number;
 }
@@ -19,7 +19,7 @@ export default function ProductGrid() {
     const [error, setError] = useState<string | null>(null);
     const [filters, setFilters] = useState<FilterProductType>({
         electronics: false,
-        showOutOfStock: false,
+        hideOutOfStock: false,
         minPrice: undefined,
         maxPrice: undefined
     });
@@ -57,9 +57,10 @@ export default function ProductGrid() {
 
         const tempProducts = products.filter((product) => {
             const electronicsCondition = !filters.electronics || product.category === 'electronics';
-            const stockCondition = !filters.showOutOfStock || product.inStock;
+            const stockCondition = filters.hideOutOfStock ? product.inStock : true;
             const minPriceCondition = filters.minPrice === undefined || product.currentPrice >= (filters.minPrice || 0);
             const maxPriceCondition = filters.maxPrice === undefined || product.currentPrice <= (filters.maxPrice || 0);
+
             return electronicsCondition && stockCondition && minPriceCondition && maxPriceCondition;
         });
 
@@ -141,7 +142,7 @@ export default function ProductGrid() {
                             </div>
                         ) : (
                             filteredAndSortedProducts.map((product) => (
-                                <ProductCard key={product.id} product={product} onCardClick={handleOpenModal} />
+                                <ProductCard key={product.localId} product={product} onCardClick={handleOpenModal} />
                             ))
                         )}
                     </div>

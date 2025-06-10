@@ -2,7 +2,7 @@ import { Button, TextInput, ToggleSwitch } from "flowbite-react";
 import { useState } from "react";
 import { AiOutlineDollarCircle } from "react-icons/ai";
 
-export default function ProductFiler({ filters, setFilters }: { filters: { electronics: boolean, showOutOfStock: boolean, minPrice?: number, maxPrice?: number }, setFilters: (filters: { electronics: boolean, showOutOfStock: boolean, minPrice?: number, maxPrice?: number }) => void }) {
+export default function ProductFiler({ filters, setFilters }: { filters: { electronics: boolean, hideOutOfStock: boolean, minPrice?: number, maxPrice?: number }, setFilters: (filters: { electronics: boolean, hideOutOfStock: boolean, minPrice?: number, maxPrice?: number }) => void }) {
     const [minPrice, setMinPrice] = useState<number | undefined>(filters.minPrice);
     const [maxPrice, setMaxPrice] = useState<number | undefined>(filters.maxPrice);
 
@@ -18,8 +18,8 @@ export default function ProductFiler({ filters, setFilters }: { filters: { elect
                     <ToggleSwitch id="electronics" checked={filters.electronics} onChange={() => setFilters({ ...filters, electronics: !filters.electronics })} />
                 </div>
                 <div className="flex mb-3 justify-between items-center">
-                    <label className="text-sm" htmlFor="show-out-of-stock">Show '<span className="font-medium">Out of Stock</span>'</label>
-                    <ToggleSwitch id="show-out-of-stock" checked={filters.showOutOfStock} onChange={() => setFilters({ ...filters, showOutOfStock: !filters.showOutOfStock })} />
+                    <label className="text-sm" htmlFor="hide-out-of-stock">Hide '<span className="font-medium">Out of Stock</span>'</label>
+                    <ToggleSwitch id="hide-out-of-stock" checked={filters.hideOutOfStock} onChange={() => setFilters({ ...filters, hideOutOfStock: !filters.hideOutOfStock })} />
                 </div>
                 <hr className="my-2 border-gray-200" />
                 <div className="flex flex-col gap-2">

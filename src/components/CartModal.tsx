@@ -31,7 +31,7 @@ export default function CartModal({ isOpen, onClose }: CartModalProps) {
             updateQuantity(item.id, newQuantity);
         }
     }; return (<div onClick={onClose} className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center p-2 sm:p-4 z-50">
-        <div onClick={(e) => e.stopPropagation()} className="bg-white text-gray-800 rounded-lg shadow-xl max-w-2xl w-full max-h-[90vh] sm:max-h-[80vh] overflow-hidden flex flex-col">
+        <div onClick={(e) => e.stopPropagation()} className="bg-white text-gray-800 rounded-lg shadow-xl max-w-2xl w-full max-h-[95vh] overflow-hidden flex flex-col">
             <div className="flex justify-between items-center p-4 sm:p-6 border-b border-gray-200 flex-shrink-0">
                 <h2 className="text-xl sm:text-2xl font-bold text-gray-900">Shopping Cart</h2>
                 <button
@@ -50,7 +50,7 @@ export default function CartModal({ isOpen, onClose }: CartModalProps) {
                         <p className="text-gray-400 text-sm mt-2">Add some items to get started</p>
                     </div>
                 ) : (
-                    <>                        <div className="flex-1 overflow-y-auto px-4 sm:px-6 pt-4 sm:pt-6">
+                    <>                        <div className="flex-1 overflow-y-auto px-4 sm:px-6 py-4 sm:py-6">
                         <div className="space-y-3 sm:space-y-4">
                             {state.items.map((item) => (
                                 <div key={item.id} className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4 p-3 sm:p-4 border border-gray-200 rounded-lg">

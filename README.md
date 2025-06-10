@@ -85,12 +85,7 @@ crowngoods/
 - **Modular architecture** with reusable components
 - **Responsive design** with Tailwind CSS utilities
 
-## Deployment
 
-### Build for Production
-```bash
-npm run build
-```
 
 The build artifacts will be stored in the `dist/` directory.
 
@@ -107,11 +102,5 @@ The build artifacts will be stored in the `dist/` directory.
 - **Tailwind CSS** for the utility-first CSS framework
 - **React Icons** for the comprehensive icon library
 
-## Support
-
-If you have any questions or need help, please:
-1. Check the existing issues on GitHub
-2. Create a new issue with detailed description
-3. Join our community discussions
 
 ---
