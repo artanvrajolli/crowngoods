@@ -89,10 +89,10 @@ export default function ProductCard({ product, onCardClick }: ProductCardProps) 
             <img
                 src={product.imageUrl}
                 alt={product.name}
-                className="w-full h-60 object-contain mb-4"
+                className="w-full h-60 object-contain mb-4 p-3"
             />
         </div>
-        <div className="p-4 text-left w-full flex flex-col flex-1">
+        <div className="p-2 text-left w-full flex flex-col flex-1">
             <h3 className="text-gray-700 text-sm md:text-base font-medium mb-2 line-clamp-2 min-h-[3rem]" title={product.name}>
                 {product.name}
             </h3>
