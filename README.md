@@ -2,6 +2,24 @@
 
 A modern, responsive e-commerce web application built with React, TypeScript, and Tailwind CSS. CrownGoods provides a seamless shopping experience with product browsing, filtering, cart management, and payment processing.
 
+## Visual Showcase
+
+### Shopping Cart
+![Shopping Cart](screenshots/image_shopping_cart.png)  
+*Intuitive shopping cart with item management, quantity controls, and order summary*
+
+### Product Catalog
+![Product Grid](screenshots/image_products.png)
+*Responsive product grid with filtering, sorting, and category-based browsing*
+
+### Product Details
+![Product Modal](screenshots/image_modal_product.png)  
+*Detailed product view with specifications, pricing*
+
+### Payment Processing
+![Payment Modal](screenshots/image_payment_modal.png)
+*Secure payment interface with multiple payment methods and form validation*
+
 ## Features
 
 ### Core Functionality
@@ -85,7 +103,7 @@ crowngoods/
 - **Modular architecture** with reusable components
 - **Responsive design** with Tailwind CSS utilities
 
-
+## Deployment
 
 The build artifacts will be stored in the `dist/` directory.
 
