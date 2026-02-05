@@ -9,7 +9,7 @@ interface PaymentModalProps {
 
 export default function PaymentModal({ onBack }: PaymentModalProps) {
     const [activeTab, setActiveTab] = useState<"card" | "googlePay">("card");
-    const demoMessage = "This checkout is for demo purposes only. Please do not enter real card details.";
+    const demoMessage = "This checkout is for demo purpose only.";
 
     return (
         <div className="text-gray-800">
@@ -100,7 +100,7 @@ export default function PaymentModal({ onBack }: PaymentModalProps) {
                     trigger="hover"
                     placement="top"
                     content={
-                        <div className="max-w-xs text-sm text-gray-700">
+                        <div className="max-w-xs text-sm text-gray-800 bg-white rounded p-2 shadow-lg">
                             {demoMessage}
                         </div>
                     }
