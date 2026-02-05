@@ -24,7 +24,6 @@ export default function ProductModal({ product, onClose }: ProductModalProps) {
                 ) : (
                     <PaymentModal
                         onBack={() => setShowPaymentForm(false)}
-                        onClose={onClose}
                     />
                 )}
             </div>

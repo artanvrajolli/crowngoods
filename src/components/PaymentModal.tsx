@@ -5,11 +5,11 @@ import { BsCreditCard2Back } from "react-icons/bs";
 
 interface PaymentModalProps {
     onBack: () => void;
-    onClose: () => void;
 }
 
-export default function PaymentModal({ onBack, onClose }: PaymentModalProps) {
+export default function PaymentModal({ onBack }: PaymentModalProps) {
     const [activeTab, setActiveTab] = useState<"card" | "googlePay">("card");
+    const demoMessage = "This checkout is for demo purposes only. Please do not enter real card details.";
 
     return (
         <div className="text-gray-800">
@@ -101,17 +101,16 @@ export default function PaymentModal({ onBack, onClose }: PaymentModalProps) {
                     placement="top"
                     content={
                         <div className="max-w-xs text-sm text-gray-700">
-                            This checkout is for demo purposes only. Please do not enter real card details.
+                            {demoMessage}
                         </div>
                     }
                 >
                     <div className="w-full sm:flex-1">
                         <button
-                            onClick={onClose}
                             disabled
-                            aria-disabled="true"
-                            className="w-full cursor-not-allowed bg-[#e4673b] text-white py-3 px-4 rounded-md opacity-60 transition-colors focus:outline-none focus:ring-2 focus:ring-[#e4673b] focus:ring-opacity-50"
+                            className="w-full cursor-not-allowed bg-gray-300 text-gray-500 py-3 px-4 rounded-md"
                         >
+                            <span className="sr-only">{demoMessage} </span>
                             Complete Payment
                         </button>
                     </div>
