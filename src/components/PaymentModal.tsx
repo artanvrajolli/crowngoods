@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Popover } from "flowbite-react";
 import { FaGooglePay, FaCreditCard, FaCcVisa } from "react-icons/fa";
 import { BsCreditCard2Back } from "react-icons/bs";
 
@@ -95,12 +96,26 @@ export default function PaymentModal({ onBack, onClose }: PaymentModalProps) {
             )}
 
             <div className="mt-8 flex flex-col space-y-3 sm:flex-row sm:space-y-0 sm:space-x-3">
-                <button
-                    onClick={onClose}
-                    className="w-full sm:flex-1 cursor-pointer bg-[#e4673b] text-white py-3 px-4 rounded-md hover:bg-[#d35f30] transition-colors focus:outline-none focus:ring-2 focus:ring-[#e4673b] focus:ring-opacity-50"
+                <Popover
+                    trigger="hover"
+                    placement="top"
+                    content={
+                        <div className="max-w-xs text-sm text-gray-700">
+                            This checkout is for demo purposes only. Please do not enter real card details.
+                        </div>
+                    }
                 >
-                    Complete Payment
-                </button>
+                    <div className="w-full sm:flex-1">
+                        <button
+                            onClick={onClose}
+                            disabled
+                            aria-disabled="true"
+                            className="w-full cursor-not-allowed bg-[#e4673b] text-white py-3 px-4 rounded-md opacity-60 transition-colors focus:outline-none focus:ring-2 focus:ring-[#e4673b] focus:ring-opacity-50"
+                        >
+                            Complete Payment
+                        </button>
+                    </div>
+                </Popover>
                 <button
                     onClick={onBack}
                     className="w-full sm:flex-1 cursor-pointer bg-gray-200 text-gray-700 py-3 px-4 rounded-md hover:bg-gray-300 transition-colors focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-opacity-50"
